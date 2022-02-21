@@ -116,8 +116,20 @@
 	}
 }
 
+@media only screen and (max-width: var.$mobile-XL) {
+	.rarity .inner-section.trait-categories {
+		margin-top: 285px;
+	}
+}
+@media only screen and (max-width: var.$mobile-L) {
+	.rarity .inner-section.trait-categories {
+		margin-top: 250px;
+	}
+}
 @media only screen and (max-width: var.$mobile-M) {
-	.rarity .inner-section.trait-categories .cards-container {
-		grid-template-columns: repeat(2, auto);
+	.rarity .inner-section.trait-categories {
+		.cards-container {
+			grid-template-columns: repeat(2, auto);
+		}
 	}
 }

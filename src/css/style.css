@@ -138,8 +138,14 @@ a {
   .navigation .links-container {
     display: none;
   }
+  .navigation .links-container .right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
   .navigation .links-container .right .icons-container .icon {
-    width: 70%;
+    min-width: 0.3em;
+    width: 2em;
   }
   .navigation .hamburger {
     display: block;
@@ -303,6 +309,17 @@ a {
   }
   .rarity .inner-section.trait-categories .cards-container .card .img img {
     top: 5px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .rarity .inner-section.trait-categories {
+    margin-top: 285px;
+    border: red solid 1px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .rarity .inner-section.trait-categories {
+    margin-top: 250px;
   }
 }
 @media only screen and (max-width: 370px) {
