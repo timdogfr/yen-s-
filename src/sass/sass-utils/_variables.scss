@@ -1,0 +1,22 @@
+$primary-color: #6161e0;
+$primary-color-svg: invert(73%) sepia(35%) saturate(1400%) hue-rotate(206deg)
+	brightness(96%) contrast(98%);
+$blue: #81e4ff;
+$blue-svg: invert(90%) sepia(6%) saturate(4657%) hue-rotate(168deg)
+	brightness(101%) contrast(98%);
+$tertiary-color: #ecf693;
+$light-primary: #c5c5ff;
+$dark-primary: #8a81cc;
+$light-pink: #fcedf1;
+$dark-pink: #ca7b90;
+$text-color: #3f4a89;
+$background: #8ef68b;
+$white: #fff;
+
+$transition: 0.5s;
+
+@forward './reset';
+@forward './mixins';
+@forward './breakpoints';
+@forward './fonts';
+

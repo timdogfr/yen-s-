@@ -1,0 +1,24 @@
+@use '../sass-utils/variables' as var;
+%button {
+	border-radius: 80px;
+	border: 3px solid var.$primary-color;
+	box-shadow: var.$primary-color 0px 6px;
+	padding: 5px 1.5rem;
+	background-color: var.$white;
+}
+
+.btn {
+	text-align: center;
+	text-decoration: none;
+	color: var.$primary-color;
+	@extend %button;
+	&:hover {
+		background: rgb(255, 169, 192);
+		background: linear-gradient(
+			90deg,
+			rgba(255, 169, 192, 1) 0%,
+			rgba(255, 255, 255, 1) 50%,
+			rgba(154, 224, 252, 1) 100%
+		);
+	}
+}

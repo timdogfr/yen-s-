@@ -1,0 +1,123 @@
+@use '../sass-utils/variables' as var;
+@mixin cards-container-style {
+	.inner-section {
+		padding: 0px 100px 100px 100px;
+		.title {
+			background-color: #fff;
+			border-radius: 50px;
+			padding: 5px;
+			text-align: center;
+			margin: 15px 0;
+		}
+		.cards-container {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: 1fr;
+			gap: 20px;
+			.card {
+				pointer-events: none;
+				font-size: var.$fs-200;
+				background-color: var.$blue;
+				border-radius: 16px;
+				overflow: hidden;
+				.info {
+					padding: 20px;
+					font-size: var.$fs-200;
+					.title {
+						text-align: left;
+						background-color: unset;
+					}
+					.description {
+						font-size: var.$fs-200;
+						color: var.$white;
+					}
+				}
+				.img {
+					width: 100%;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: contain;
+						position: relative; // Fixes space left by the gif
+						top: 5px;
+					}
+				}
+			}
+		}
+	}
+	.inner-section.trait-categories {
+		.cards-container {
+			grid-template-columns: repeat(4, auto);
+			.card {
+				display: flex;
+				.info {
+					text-align: left;
+					.title {
+						display: unset;
+					}
+				}
+				padding: 0;
+			}
+		}
+	}
+}
+.rarity {
+	@include var.divider-container;
+	background-color: var.$dark-primary;
+	.section {
+		padding-bottom: 10px;
+	}
+	@include cards-container-style;
+}
+@media only screen and (max-width: var.$tablet-L) {
+	.rarity {
+		&.trait-categories .cards-container .card .img img {
+			top: 10px;
+		}
+	}
+}
+
+// Media query for slider
+@media only screen and (max-width: var.$tablet) {
+	.rarity {
+		.inner-section {
+			position: relative;
+			.slider {
+				overflow: hidden;
+				position: absolute;
+				z-index: 40;
+				top: 60px;
+				height: 420px;
+				width: 80%;
+				.inner-slider {
+					transition: var.$transition;
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: fit-content;
+					width: 300%;
+				}
+			}
+			padding: 0px 50px 50px 50px;
+			&.trait-categories {
+				margin-top: 400px;
+				.cards-container {
+					grid-template-columns: repeat(4, auto);
+					.card {
+						flex-direction: column;
+						justify-content: space-between;
+						.img img {
+							top: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: var.$mobile-M) {
+	.rarity .inner-section.trait-categories .cards-container {
+		grid-template-columns: repeat(2, auto);
+	}
+}

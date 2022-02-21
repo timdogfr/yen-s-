@@ -1,0 +1,11 @@
+@use '../sass-utils/variables' as var;
+.roadmap-body {
+    padding-top: 120px;
+    .img {
+        width: 100%;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

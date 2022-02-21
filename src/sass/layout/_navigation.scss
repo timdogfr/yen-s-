@@ -1,0 +1,111 @@
+@use '../sass-utils/variables' as var;
+@use '../components/button' as button;
+@use '../components/hamburger' as hamburger;
+
+.navigation {
+	transition: var.$transition;
+	color: var.$primary-color;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	position: fixed;
+	z-index: 100;
+	top: 24px;
+	left: 5%; // This center our nav
+	width: 90vw;
+	height: 80px;
+	@extend %button;
+	a {
+		all: unset;
+		cursor: pointer;
+	}
+	.links-container {
+		flex-basis: 100%;
+		justify-content: space-between;
+		ul {
+			justify-content: center;
+			align-items: center;
+			gap: 32px;
+		}
+		li {
+			text-indent: 0;
+			list-style-type: none;
+		}
+
+		.right .icons-container .icon {
+			width: 1em;
+		}
+	}
+
+	.links-container,
+	ul {
+		display: flex;
+	}
+	// &.mobile {
+	// 	// display: grid;
+	// 	// grid-template-columns: repeat(3, auto);
+	// 	// height: min-content;
+	// 	// background-color: var.$blue;
+	// 	// align-items: flex-start;
+	// 	// padding: 20px;
+	// 	// &::after {
+	// 	// 	background-color: var.$blue;
+	// 	// 	position: absolute;
+	// 	// 	content: '';
+	// 	// 	width: 100vw;
+	// 	// 	height: 100vh;
+	// 	// 	z-index: -1;
+	// 	// 	top: 0;
+	// 	// 	left: 0;
+	// 	// }
+	// 	// .links-container.show {
+	// 	// 	display: flex;
+	// 	// 	flex-direction: column;
+	// 	// 	.left {
+	// 	// 		margin: 60px 0;
+	// 	// 		flex-direction: column;
+	// 	// 		gap: 50px;
+	// 	// 	}
+	// 	// 	.right .icons-container .icon {
+	// 	// 		width: 70%;
+	// 	// 	}
+	// 	// }
+	// }
+}
+
+#show_navigation {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	height: min-content;
+	background-color: var.$white;
+	align-items: flex-start;
+	padding: 20px;
+	top: -1000px;
+	&.show {
+		top: 30px;
+	}
+	.links-container{
+		display: flex;
+		flex-direction: column;
+		.left {
+			margin: 60px 0;
+			flex-direction: column;
+			gap: 50px;
+		}
+	}
+}
+
+@media only screen and (max-width: 1030px){
+	.navigation {
+		justify-content: space-between;
+		.links-container {
+			display: none;
+			.right .icons-container .icon {
+				width: 70%;
+			}
+		}
+		.hamburger {
+			display: block;
+		}
+	}
+}

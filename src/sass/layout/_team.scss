@@ -1,0 +1,68 @@
+@use '../sass-utils/variables' as var;
+@use './rarity' as rarity;
+
+.team {
+	@include rarity.cards-container-style;
+	@include var.divider-container;
+	.section-divider {
+		position: relative;
+		top: -10px;
+	}
+	#team-divider {
+		top: 10px;
+	}
+	text-align: center;
+	background-color: var.$light-primary;
+	.trait-categories {
+		.cards-container {
+			margin: 50px 0;
+			grid-template-columns: repeat(3, auto) !important;
+			.card {
+				text-align: left;
+				background-color: var.$blue;
+				.info {
+					a {
+						text-decoration: none;
+						color: darken(var.$blue, $amount: 20%);
+					}
+					.icon {
+						filter: invert(77%) sepia(42%) saturate(4184%) hue-rotate(165deg)
+							brightness(99%) contrast(97%);
+					}
+					.title {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: var.$tablet-L) {
+	.team .trait-categories .cards-container {
+		grid-template-columns: repeat(2, auto) !important;
+	}
+}
+
+@media only screen and (max-width: var.$tablet) {
+	.team {
+		.trait-categories .cards-container {
+			grid-template-columns: 1fr !important;
+			grid-template-rows: repeat(4, auto) !important;
+			.card {
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				.img {
+					width: fit-content;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: var.$mobile-L) {
+	.team .inner-section {
+		padding: 0px 50px 50px 50px;
+	}
+}

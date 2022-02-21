@@ -1,0 +1,47 @@
+@use '../sass-utils/variables' as var;
+
+.roadmap {
+	@include var.divider-container;
+	// overflow: hidden;
+	text-align: center;
+	background-color: var.$blue;
+	.title-section {
+		padding: 6rem 0 4rem 0;
+	}
+	.section-divider {
+		// border: red solid 1px;
+		top: -11px;
+	}
+	.roadmap-footer-divider {
+		position: absolute;
+		bottom: -10px;
+		left: 0;
+		width: 100%;
+	}
+	.img-container {
+		position: relative;
+		width: 100%;
+		min-height: 90vh;
+		background-image: linear-gradient(
+				rgba(55, 55, 128, 0) 0%,
+				rgb(55, 55, 128) 100%
+			),
+			url('..//../img/roadmap.svg');
+		background-repeat: no-repeat;
+		height: auto;
+		color: white;
+	}
+	.btn {
+		position: relative;
+		top: 390px;
+		font-size: clamp(0.8em, 3vw, 2em);
+	}
+}
+
+@media only screen and (max-width: var.$mobile-M) {
+	.roadmap {
+		.btn {
+			transform: none;
+		}
+	}
+}

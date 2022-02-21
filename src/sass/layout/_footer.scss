@@ -1,0 +1,34 @@
+@use '../sass-utils/variables' as var;
+.footer {
+	background-color: var.$blue;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	p,
+	a {
+		font-size: 18px;
+		font-family: 'Balsamiq Sans', cursive, Arial, Helvetica, sans-serif;
+		color: var.$text-color;
+	}
+	.img-container {
+		width: 120px;
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+    .logo {
+        margin: 20px 0;
+    }
+	.icons-container {
+		display: flex;
+        gap: 30px;
+		a {
+			all: unset;
+			.icon {
+				width: 30px;
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Mat Saleh;
+    src: url('font-family/Mat Saleh.ttf');
+    src: url('font-family/Mat Saleh.otf');
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Mat Saleh, 'Balsamiq Sans', cursive, Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-size: 24px;
+    color: #3F4A89;
+    background-color: #81e4ff;
+    header:first-child {
+        padding-top: 130px; // Fixes the space left by navigation
+    }
+}
+
+a {
+    text-decoration: none;
+}

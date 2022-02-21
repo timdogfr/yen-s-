@@ -1,0 +1,8 @@
+@use '../sass-utils/variables' as var;
+.about {
+	@include var.divider-container;
+	.section-divider {
+		bottom: -10px;
+	}
+	background-color: var.$light-primary;
+}

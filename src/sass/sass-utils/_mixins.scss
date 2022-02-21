@@ -1,0 +1,16 @@
+@mixin border_text {
+    color: #fff;
+    text-shadow: rgb(110, 110, 245) -3px 3px 0px;
+    -webkit-text-stroke: 1.5px rgb(70, 70, 189);
+}
+
+
+@mixin divider-container {
+    position: relative;
+    .section-divider {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+    }
+}

@@ -1,0 +1,46 @@
+@use '../sass-utils/variables' as var;
+.paragraph {
+	p {
+		font-family: var.$font-family;
+		font-size: var.$fs-400;
+		margin: 2rem 0;
+	}
+}
+
+.title-section {
+	font-size: var.$fs-xxl;
+	margin: 10px 0;
+	@include var.border_text;
+}
+
+.section {
+	padding: 80px 250px;
+	text-align: center;
+}
+
+html {
+	scroll-behavior: smooth !important;
+}
+
+@media only screen and (max-width: var.$tablet) {
+	.section {
+		padding: 20px 30px;
+	}
+}
+@media only screen and (max-width: var.$mobile-L) {
+	p {
+		font-size: var.$fs-200;
+	}
+	.title-section {
+		font-size: var.$fs-xl;
+	}
+}
+
+@media only screen and (max-width: var.$mobile-S) {
+	p {
+		font-size: var.$fs-200 !important;
+	}
+	.title-section {
+		font-size: var.$fs-600 !important;
+	}
+}

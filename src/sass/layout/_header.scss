@@ -1,0 +1,33 @@
+@use '../sass-utils/variables' as var;
+.header {
+	color: var.$white;
+	font-size: 30px;
+	background-color: var.$background;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	.section-divider {
+		width: 100%;
+		object-fit: cover;
+		position: relative;
+		top: 10px; // Fixes space left by the header between about
+	}
+	.btn {
+		font-size: clamp(0.4em, 3vw, 2em);
+	}
+	.title {
+		font-size: clamp(1em, 20vw, 5em);
+		text-shadow: -5px -5px var.$primary-color;
+	}
+	.description {
+		@include var.border_text;
+		font-size: clamp(0.6em, 4vw, 3em);
+	}
+}
+
+
+@media only screen and (max-width: var.$tablet-L) {
+	.header {gap: .5rem;}
+}
+
