@@ -1,1 +1,0 @@
-# doodix-nft-collection
